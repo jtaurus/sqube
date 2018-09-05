@@ -5,4 +5,9 @@ node {
   stage('Hello') {
    sh 'echo Hello Pipeline!'
   }
+  stage('Install dependencies') {
+    dir("app") {
+      sh 'npm install'
+    }
+  }
 }
