@@ -18,4 +18,12 @@ function foo(a) {  // Noncompliant
   return b;
 }
 
+function duplicate(a) {
+  let b = 12;
+  if(a) {
+    return a;
+  }
+  return b;
+}
+
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
