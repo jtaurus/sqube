@@ -10,4 +10,12 @@ if(true == false)
   // Dead code
 }
 
+function foo(a) {  // Noncompliant
+  let b = 12;
+  if (a) {
+    return b;
+  }
+  return b;
+}
+
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
