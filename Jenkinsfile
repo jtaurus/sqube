@@ -7,7 +7,7 @@ node {
   }
   stage('Install dependencies') {
     dir("app") {
-    env.NODEJS_HOME = "${tool 'Node 6.x'}"
+    env.NODEJS_HOME = "${tool 'node-10'}"
     
     // on linux / mac
     env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
