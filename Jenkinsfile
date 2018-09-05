@@ -15,4 +15,11 @@ node {
     sh 'npm --version'
     }
   }
+  stage('SonarQube analysis') {
+    def scannerHome = tool 'sonarscanner-1';
+    
+    withSonarQubeEnv('sonar-server-localhost') {
+      sh "${scannerHome}/bin/sonar-scanner"
+    }
+  }
 }
