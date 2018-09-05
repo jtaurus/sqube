@@ -7,7 +7,12 @@ node {
   }
   stage('Install dependencies') {
     dir("app") {
-      sh 'npm install'
+    env.NODEJS_HOME = "${tool 'Node 6.x'}"
+    
+    // on linux / mac
+    env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
+
+    sh 'npm --version'
     }
   }
 }
